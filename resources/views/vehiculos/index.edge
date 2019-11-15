@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vehiculos</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+  <body>
+    <div>
+      <nav>
+        
+          <div >
+              <a href="/clientes">Clientes</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable">Mecanicos</a>
+          </div>
+          <div>
+              <a href="/repuestos">Refacciones</a>
+          </div>
+          <div>
+              <a href="/factura">Transacciones</a>
+          </div>
+      </nav>
+
+      <div align="center"><a href="/vehiculos/crear">Crear vehiculo</a></div>
+      <div align="center">
+        <div>
+          <h1>Vehiculos</h1>
+            <div>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Modelo</th>
+                      <th>Color</th>
+                      <th>Fecha</th>
+                      <th>Hora</th>
+                      <th>ID Cliente</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(vehiculo in vehiculos)
+                      <tr>
+                        <td>{{vehiculo.id}}</td>
+                        <td>{{vehiculo.modelo}}</td>
+                        <td>{{vehiculo.color}}</td>
+                        <td>{{vehiculo.fecha_ent}}</td>
+                        <td>{{vehiculo.hora_ent}}</td>
+                        <td>{{vehiculo.cliente_idrfc}}</td>
+                        
+                        <td>
+                          <li>
+                            <a href="/vehiculos/editar/{{vehiculo.id}}">Editar</a>
+                          </li>
+                        </td>
+                        <td>
+                          <li>
+                            <a href="/vehiculos/eliminar/{{vehiculo.id}}">Eliminar</a>
+                          </li>
+                        </td>
+                        </td>
+                      </tr>
+                    @endeach
+                  </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

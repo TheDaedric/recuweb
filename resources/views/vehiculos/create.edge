@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crear vehiculos</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+    <a href="/clientes">Menu</a>
+  <div align="center">
+    <h1>Añadir Vehiculo a Cliente</h1>
+  </div>
+  
+  <div align="center">
+    <form action="/vehiculos/crear" method="POST">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <label for="MODELO">Modelo</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="MODELO" id="MODELO">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="COLOR">Color</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="COLOR" id="COLOR">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="FECHA_ENT">Fecha</label>
+                <p>YYYY-MM-DD</p>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="FECHA_ENT" id="FECHA_ENT">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="HORA_ENT">Hora de ingreso</label>
+                <p>HH:MM:SS</p>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="HORA_ENT" id="HORA_ENT">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                  <label for="CLIENTE_id">ID del Cliente</label>
+              </div>
+            </td>
+            <td>
+              <select name="cliente_idrfc" id="cliente_idrfc">
+                @each(cliente in clientes)
+                  <option value="{{cliente.id}}">{{cliente.id}}/{{cliente.nombre}}</option>
+                @endeach
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">Agregar Vehiculo a cliente</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Repuesto</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+  <body>
+    <div>
+        
+          <div >
+              <a href="/clientes">Clientes</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable">Mecanicos</a>
+          </div>
+          <div>
+              <a href="/repuestos">Refacciones</a>
+          </div>
+          <div>
+              <a href="/factura">Transacciones</a>
+          </div>
+        </div>
+     
+      <div align="center">
+        <div>
+          <h1>Refacciones</h1>
+          <div>
+              <div>
+                <div>
+                 
+                  <div>
+                    <a href="/repuestos/crear">Agregar Refaccion</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                 
+                  <div>
+                    <h4>Hojas de partes</h4>
+                    <h6>Solicitud de refaccion para el mantenimiento del vehiculo</h6>
+                    <a href="/hoja_de_parte">Hojas de partes</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div>
+                <table border="1">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Descripcion</th>
+                        <th>Costo</th>
+                        <th>Precio</th>
+                        <th>Importe por pieza</th>
+                        <th>ID hoja</th>
+                        <th>ID Mecanico asignado</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @each(repuesto in repuestos)
+                        <tr>
+                          <td>{{repuesto.id}}</td>
+                          <td>{{repuesto.descripcion}}</td>
+                          <td>{{repuesto.costounit}}</td>
+                          <td>{{repuesto.preciounit}}</td>
+                          <td>{{repuesto.imp_parcial}}</td>
+                          <td>{{repuesto.hojadeparte_idHOJA}}</td>
+                          <td>{{repuesto.hojadeparte_mecanicoresponsable_idMEC}}</td>
+                          <td>
+                            
+                              <a href="/repuestos/editar/{{repuesto.id}}">Editar</a>
+                            
+                          </td>
+                          <td>
+                            
+                              <a href="/repuestos/eliminar/{{repuesto.id}}">Eliminar</a>
+                           
+                          </td>
+                          </td>
+                        </tr>
+                      @endeach
+                    </tbody>
+                </table>
+              </div>
+              <div>
+                <div>
+                  <h3>Hoja de partes</h3>
+                  
+                </div>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>ID hoja</th>
+                      <th>Concepto</th>
+                      <th>Cantidad</th>
+                      <th>Objeto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(hoja in hojas)
+                    <tr>
+                      <td>{{hoja.id}}</td>
+                      <td>{{hoja.concepto}}</td>
+                      <td>{{hoja.cantidad}}</td>
+                      <td>{{hoja.reparacion}}</td>
+                    </tr>
+                    @endeach
+                  </tbody>
+                </table>
+              </div>
+            <div>
+              <div>
+                <h3>Mecanicos</h3>
+                <br>
+              </div>
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(mecanico in mecanicos)
+                      <tr>
+                        <td>{{mecanico.id}}</td>
+                        <td>{{mecanico.nombre}}</td>
+                        <td>{{mecanico.direccion}}</td>
+                        <td>{{mecanico.tel}}</td>
+                      </tr>
+                    @endeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

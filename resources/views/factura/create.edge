@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crear factura</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+<a href="/factura">Menu</a> 
+  <div align="center">
+    <h1>Crear Factura de Hojas</h1>
+    <br>
+  </div>
+  
+  <div>
+    <form action="/factura/crear" method="POST">
+      <table align="center">
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <label for="FECHA">Fecha</label>
+                <p>YYYY-MM-DD</p>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="fecha" id="fecha">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="IMP_PESOS">Importe pesos</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="imp_pesos" id="imp_pesos">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="IMP_DOL">Importe dolares</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="IMP_DOL" id="IMP_DOL">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="RFC">RFC</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="RFC" id="RFC">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                  <label for="idHOJAPARTE">ID del Cliente</label>
+              </div>
+            </td>
+            <td>
+              <select name="facturas_idhoja" id="facturas_idhoja">
+                @each(hoja in hojas)
+                  <option value="{{hoja.id}}">{{hoja.id}}/{{hoja.concepto}}</option>
+                @endeach
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div align="center"><button type="submit">Transaccion</button></div>
+      
+    </form>
+  </div>
+</body>
+</html>

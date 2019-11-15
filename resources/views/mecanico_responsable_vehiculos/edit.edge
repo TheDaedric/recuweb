@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Editar mecanico vehiculo</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+ <a href="/mecanico_vehiculo">Menu</a>
+  <div align="center">
+    <h1>Editar asignacion</h1>
+  </div>
+ 
+    <div align="center">
+        <form action="/mecanico_vehiculo/editar/{{mecanico_vehiculo.id}}" method="POST">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div>
+                    <label for="idMECANICO"> ID mecanico</label>
+                  </div>
+                </td>
+                <td>
+                <select name="idMECANICO" id="idMECANICO">
+                  @each(mecanico in mecanicos)
+                    <option value="{{mecanico.id}}{{mecanico.nombre}}">{{mecanico.id}}/{{mecanico.nombre}}</option>
+                  @endeach
+                </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div>
+                    <label for="idVEHICULO"> ID vehiculo </label>
+                  </div>
+                </td>
+                <td>
+                <select name="idVEHICULO" id="idVEHICULO">
+                  @each(vehiculo in vehiculos)
+                    <option value="{{vehiculo.id}}{{vehiculo.modelo}}">{{vehiculo.id}}/{{vehiculo.modelo}}</option>
+                  @endeach
+                </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit">Editar</button>
+        </form>
+    </div>
+</body>
+</html>

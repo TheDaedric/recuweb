@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Editar cliente</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+<a href="/clientes">Menu</a>
+<div align="center">
+  <h1>Editar  {{cliente.nombre}}</h1>
+  
+</div>
+<br><br>
+<div class="container">
+  <form action="/clientes/editar/{{cliente.id}}" method="post">
+    <table align="center">
+        <tbody>
+          <tr>
+            <td>
+              <div>
+              
+                <label for="NOMBRE"> Nombre</label>
+              </div>
+            </td>
+            <td>
+            <input type="text" name="nombre" id="nombre" value="{{cliente.nombre}}">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="DIRECCION"> Direccion</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="direccion" id="direccion" value="{{cliente.direccion}}">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="TELEFONO"> Telefono </label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="telefono" id="telefono" value="{{cliente.telefono}}">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div align="center"><button type="submit">Editar</button></div>
+    
+  </form>
+</div>
+</body>
+</html>

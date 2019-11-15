@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crear mecanico</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+ <a href="/mecanico_responsable">Menu</a>
+  <div align="center">
+      <h1>Agregar Mecanico</h1>
+      <br><br>
+  </div>
+ 
+  <div align="Center">
+    <form action="/mecanico_responsable/crear" method="POST">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <label for="NOMBRE">Nombre</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="NOMBRE" id="NOMBRE">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="DIRECCION">Direccion</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="DIRECCION" id="DIRECCION">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="TEL">Telefono</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="TEL" id="TEL">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="COSTOXHORA">Costo por hora</label>
+              </div>
+            </td>
+            <td>
+              <input type="integer" name="COSTOXHORA" id="COSTOXHORA">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="CATEGORIA">Categoria</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="CATEGORIA" id="CATEGORIA">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">Agregar</button>
+    </form>
+  </div>
+</body>
+</html>

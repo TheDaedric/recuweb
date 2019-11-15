@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Editar mecanico</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+    <a href="/mecanico_responsable">Menu</a>
+  <div align="center">
+    <h1>Editar datos del mecanico</h1>
+  </div>
+  
+  <div align="center">
+  <form action="/mecanico_responsable/editar/{{mecanico.id}}" method="POST">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div>
+              <label for="NOMBRE">Nombre</label>
+            </div>
+          </td>
+          <td>
+            <input class="form-control" type="text" name="NOMBRE" id="NOMBRE" value="{{mecanico.nombre}}">
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <div>
+                <label for="DIRECCION">Direccion</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="DIRECCION" id="DIRECCION" value="{{mecanico.direccion}}">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="TEL">Telefono</label>
+            </div>
+            </td>
+            <td>
+              <input type="text" name="TEL" id="TEL" value="{{mecanico.tel}}">
+            </td>
+          </tr>
+          <tr>
+            <td>
+            <div>
+              <label for="COSTOXHORA">Sueldo por hora</label>
+            </div>
+          </td>
+          <td>
+            <input type="text" name="COSTOXHORA" id="COSTOXHORA" value="{{mecanico.costoxhora}}">
+          </td>
+        </tr>
+        <tr>
+            <td>
+            <div>
+              <label for="CATEGORIA">Categoria</label>
+            </div>
+          </td>
+          <td>
+            <input type="text" name="CATEGORIA" id="CATEGORIA" value="{{mecanico.categoria}}">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit">Editar</button>
+  </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clientes</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+  <body >
+    <div>
+      <div>
+      
+      <nav>
+        
+          <div >
+              <a href="/clientes" >Clientes</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable">Mecanicos</a>
+          </div>
+          <div>
+              <a href="/repuestos">Refacciones</a>
+          </div>
+          <div>
+              <a href="/factura">Transacciones</a>
+          </div>
+        </div>
+     
+      </nav>
+
+      <div>        
+        <div>
+          <h1 align="center">Clientes</h1>
+          <div>
+              <div>
+                <div>
+
+                  <div align="center">
+                    <a href="/clientes/crear">Agregar Cliente</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  
+                  <div align="center">
+                    <h4>Vehiculos</h4>
+                    <a href="/vehiculos">Vehiculos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div align="center">
+                <h3>Clientes registrados</h3>
+                <br><br>
+              </div>
+                <table align="center" border="1">
+                  <thead>
+                    <tr>
+                      <th>RFC Cliente</th>
+                      <th>Nombre</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(cliente in clientes)
+                      <tr>
+                        <td>{{cliente.id}}</td>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.direccion}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td>
+                          
+                            <a href="/clientes/editar/{{cliente.id}}">Editar</a>
+                         
+                        </td>
+                        <td>
+                          
+                            <a href="/clientes/eliminar/{{cliente.id}}">Eliminar</a>
+                         
+                        </td>
+                        </td>
+                      </tr>
+                    @endeach
+                  </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

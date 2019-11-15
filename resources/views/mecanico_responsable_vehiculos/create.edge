@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crear mecanico a vehiculo</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+<a href="/mecanico_vehiculo">Menu</a>
+  <div align="center">
+    <h1>Crear asignacion de mecanico a vehiculo</h1>
+    <br><br>
+  </div>
+  
+  <div align="center">
+    <form action="/mecanico_vehiculo/crear" method="POST">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <label for="idMECANICO">Mecanico</label>
+              </div>
+            </td>
+            <td>
+              <select name="mecanico_idMEC" id="mecanico_idMEC">
+                @each(mecanico in mecanicos)
+                  <option value="{{mecanico.id}}">{{mecanico.id}}/{{mecanico.nombre}}</option>
+                @endeach
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <label for="idVEHICULO">Vehiculo a asignar</label>
+              </div>
+            </td>
+            <td>
+              <select name="vehiculo_idMATRICULA" id="vehiculo_idMATRICULA">
+                @each(vehiculo in vehiculos)
+                  <option value="{{vehiculo.id}}">{{vehiculo.id}}/{{vehiculo.modelo}}</option>
+                 @endeach
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit">Agregar</button>
+    </form>
+  </div>
+</body>
+</html>

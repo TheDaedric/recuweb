@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Editar repuesto</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+ <a href="/repuestos">Menu</a>
+  <div align="center">
+    <h1>Editar datos</h1>
+  </div>
+ 
+  <div align="center">
+    <form action="/repuestos/editar/{{repuesto.id}}" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <label for="DESCRIPCION"> Descripcion</label>
+              </div>
+            </td>
+            <td>
+            <input type="text" name="DESCRIPCION" id="DESCRIPCION" value="{{repuesto.descripcion}}">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                 <label for="COSTOUNIT"> Costo </label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="COSTOUNIT" id="COSTOUNIT" value="{{repuesto.costounit}}">
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <div>
+                   <label for="PRECIOUNIT"> precio venta </label>
+                </div>
+              </td>
+              <td>
+                <input type="text" name="PRECIOUNIT" id="PRECIOUNIT" value="{{repuesto.preciounit}}">
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <div>
+                     <label for="IMP_PARCIAL"> Importe parcial por pieza </label>
+                  </div>
+                </td>
+                <td>
+                  <input type="text" name="IMP_PARCIAL" id="IMP_PARCIAL" value="{{repuesto.imp_parcial}}">
+                </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div>
+                       <label for="idHOJADEPARTE"> ID de hoja de partes </label>
+                    </div>
+                  </td>
+                  <td>
+                    <select name="hojadeparte_idHOJA" id="hojadeparte_idHOJA">
+                      @each(hoja in hojas)
+                        <option value="{{hoja.id}}">{{hoja.id}}/{{hoja.concepto}}</option>
+                      @endeach
+                    </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <div>
+                       <label for="idMECANICODEPARTE"> Mecanico asignado </label>
+                    </div>
+                  </td>
+                  <td>
+                    <select name="hojadeparte_mecanicoresponsable_idMEC" id="hojadeparte_mecanicoresponsable_idMEC">
+                      @each(mecanico in mecanicos)
+                        <option value="{{mecanico.id}}">{{mecanico.id}}/{{mecanico.nombre}}</option>
+                      @endeach
+                    </select>
+                  </td>
+              </tr>
+        </tbody>
+      </table>
+      <button type="submit">Editar</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Editar hoja de partes</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+<body>
+<a href="/hoja_de_parte">Menu</a>
+  <div align="center">
+    <h1>Editar</h1>
+    <br>
+  </div>
+  
+  <div>
+  <form action="/hoja_de_parte/editar/{{hoja.id}}" method="POST">
+    <table align="center">
+      <tbody>
+        <tr>
+          <td>
+            <div>
+              <label for="CONCEPTO">Concepto</label>
+            </div>
+          </td>
+          <td>
+            <input type="text" name="CONCEPTO" id="CONCEPTO" value="{{hoja.concepto}}">
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <div class="form-group">
+                <label for="CANTIDAD">Cantidad</label>
+              </div>
+            </td>
+            <td>
+              <input type="text" name="CANTIDAD" id="CANTIDAD" value="{{hoja.cantidad}}">
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <div>
+                  <label for="REPARACION">Reparacion</label>
+                </div>
+              </td>
+              <td>
+                <input type="text" name="REPARACION" id="REPARACION" value="{{hoja.reparacion}}">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <div>
+                  <label for="idMECANICORESPONSABLE">Mecanico responsable</label>
+                </div>
+              </td>
+              <td>
+                <select name="idMECANICORESPONSABLE" id="idMECANICORESPONSABLE">
+                  @each(mecanico in mecanicos)
+                <option value="{{mecanico.id}}{{mecanico.nombre}}">{{mecanico.id}}/{{mecanico.nombre}}</option>
+                  @endeach
+                </select>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+    <div align="center"><button type="submit">Editar</button></div>
+    
+  </form>
+  </div>
+</body>
+</html>

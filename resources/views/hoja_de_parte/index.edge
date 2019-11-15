@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hoja de partes</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+  <body>
+    
+<nav>
+        
+          <div >
+              <a href="/clientes"">Clientes</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable">Mecanicos</a>
+          </div>
+          <div>
+              <a href="/repuestos">Refacciones</a>
+          </div>
+          <div>
+              <a href="/factura">Transacciones</a>
+          </div>
+        
+     
+      </nav>
+
+      <div>
+
+        
+        <div>
+          <div>
+              <div>
+                  
+
+              </div>
+              <div align="center">
+                <div>
+                     <div>
+                    <h4>Refacciones</h4>
+                    <h6 >Solicitud de refaccion para el mantenimiento del vehiculo</h6>
+                    <a href="/repuestos">Repuestos </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                <div align="center"><a href="/hoja_de_parte/crear">Crear</a></div>
+            <div>
+              <div>
+                <div align="center">
+                  <h3>Hojas de solicitud</h3>
+                  <br>
+                </div>
+                <table border="1" align="center">
+                    <thead>
+                      <tr>
+                        <th>ID hoja</th>
+                        <th>Concepto</th>
+                        <th>Cantidad</th>
+                        <th>Objeto a reparar</th>
+                        <th>Mecanico responsable</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @each(hoja in hojas)
+                        <tr>
+                          <td>{{hoja.id}}</td>
+                          <td>{{hoja.concepto}}</td>
+                          <td>{{hoja.cantidad}}</td>
+                          <td>{{hoja.reparacion}}</td>
+                          <td>{{hoja.mecanico_responsable_idMEC}}</td>
+                          <td>
+                              <a href="/hoja_de_parte/editar/{{hoja.id}}">Editar</a>
+                          </td>
+                          <td>
+                            <li>
+                              <a href="/hoja_de_parte/eliminar/{{hoja.id}}">Eliminar</a>
+                            </li>
+                          </td>
+                          </td>
+                        </tr>
+                      @endeach
+                    </tbody>
+                </table>
+              </div>
+              <div>
+                <div align="Center">
+                  <h3>Mecanicos</h3>
+                  <br>
+                </div>
+                <table border="1" align="center">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Direccion</th>
+                      <th>Telefono</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @each(mecanico in mecanicos)
+                      <tr>
+                        <td>{{mecanico.id}}</td>
+                        <td>{{mecanico.nombre}}</td>
+                        <td>{{mecanico.direccion}}</td>
+                        <td>{{mecanico.tel}}</td>
+                      </tr>
+                    @endeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

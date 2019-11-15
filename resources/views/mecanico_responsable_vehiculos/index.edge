@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mecanico vehiculo</title>
+  <style>
+      body {
+        background-image: url("https://wallpaperplay.com/walls/full/4/0/4/33404.jpg");
+      } 
+      
+      </style>
+</head>
+  <body>
+  <nav>
+        
+          <div >
+              <a href="/clientes">Clientes</a>
+          </div>
+          <div>
+              <a href="/mecanico_responsable">Mecanicos</a>
+          </div>
+          <div>
+              <a href="/repuestos">Refacciones</a>
+          </div>
+          <div>
+              <a href="/factura">Transacciones</a>
+          </div>
+        </div>
+     
+      </nav>
+    <div align="center">
+      <div>
+
+        <div>
+          <div>
+              <div>
+                
+                  
+                  <div>
+                    <h4>Asignar mecanico a vehiculo</h4>
+                   
+                    <a href="/mecanico_vehiculo/crear" >Crear Asignacion</a>
+                  </div>
+                
+              </div>
+              <div>
+                <div>
+                  
+                  <div>
+                    <h4>Mecanicos</h4>
+                    <a href="/mecanico_responsable">Apartado de Mecanicos</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div >
+                  <div id="mecanicos_vehiculos">
+                      <div>
+                          <h3>Vehiculos asignados mecanicos</h3>
+                          <br>
+                      </div>
+                      <table border="1">
+                          <thead>
+                            <tr>
+                              <th>ID asignado</th>
+                              <th>ID vehiculo</th>
+                              <th>Modelo</th>
+                              <th>ID mecanico</th>
+                              <th>Nombre</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @each(mecanico_vehiculo in mecanico_vehiculos)
+                              <tr>
+                                <td>{{mecanico_vehiculo.id}}</td>
+                                <td>{{mecanico_vehiculo.vehiculo_idMATRICULA}}</td>
+                                <td>{{mecanico_vehiculo.vehiculo.modelo}}</td>
+                                <td>{{mecanico_vehiculo.mecanico_idMEC}}</td>
+                                <td>{{mecanico_vehiculo.mecanico.nombre}}</td>
+                                <td>
+                                  <li>
+                                    <a href="/mecanico_vehiculo/editar/{{mecanico_vehiculo.id}}">Editar</a>
+                                  </li>
+                                </td>
+                                <td>
+                                  <li>
+                                    <a href="/mecanico_vehiculo/eliminar/{{mecanico_vehiculo.id}}">Eliminar</a>
+                                  </li>
+                                </td>
+                                </td>
+                              </tr>
+                            @endeach
+                          </tbody>
+                      </table>
+                  </div>
+                  <div>
+                    <div>
+                      <h3>Mecanicos</h3>
+                      <br>
+                    </div>
+                    <table border="1">
+                        <thead>
+                          <tr>
+                            <th>ID Mecanico</th>
+                            <th>Nombre</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @each(mecanico in mecanicos)
+                            <tr>
+                              <td>{{mecanico.id}}</td>
+                              <td>{{mecanico.nombre}}</td>
+                              <td>{{mecanico.direccion}}</td>
+                              <td>{{mecanico.tel}}</td>
+                            </tr>
+                          @endeach
+                        </tbody>
+                      </table>
+                  </div>
+                  <div>
+                    <div>
+                      <h3>Vehiculos</h3>
+                      <br>
+                    </div>
+                    <table border="1">
+                      <thead>
+                        <tr>
+                          <th>ID Vehiculo</th>
+                          <th>Modelo</th>
+                          <th>Color</th>
+                          <th>ID Cliente</th>
+                          <th>Nombre</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @each(vehiculo in vehiculos)
+                        <tr>
+                            <td>{{vehiculo.id}}</td>
+                            <td>{{vehiculo.modelo}}</td>
+                            <td>{{vehiculo.color}}</td>
+                            <td>{{vehiculo.cliente_idrfc}}</td>
+                            <td>{{vehiculo.cliente.nombre}}</td>
+                        </tr>
+                        @endeach
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
